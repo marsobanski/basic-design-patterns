@@ -6,7 +6,7 @@ import co.devfoundry.observer.homework.notification.Telegram;
 import co.devfoundry.observer.homework.notification.Telephone;
 import co.devfoundry.observer.homework.weatherForecast.WeatherForecast;
 
-public class HomeworkMain {
+public class ObserverHomeworkMain {
 
     public static void main(String[] args) {
 
