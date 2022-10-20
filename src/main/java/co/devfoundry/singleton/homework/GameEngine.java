@@ -20,8 +20,7 @@ public class GameEngine {
 
     public void play() {
         while (roundNum <= 10) {
-            System.out.println("Runda " + roundNum);
-            System.out.println("Podaj liczbę");
+            System.out.print("Runda " + roundNum + ", Podaj liczbę: ");
             int randomNumber = random.nextInt(9) + 1;
             int userNumber = input.nextInt();
             input.reset();
