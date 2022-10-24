@@ -31,7 +31,7 @@ Observer:
         * w metodzie Observer#changeOrderStatus znajduje się metoda Observer#notify,
             dzięki czemu przy zmianie stanu zawsze zostaną powiadomieni odpowiedni obserwatorzy
         * w java.util jest Observer, ale Observable jest klasą, więc jest mniej elastyczne
-    * schemat i info: https://refactoring.guru/design-patterns/observer
+
 
 Singleton:
     * do użytku kiedy można mieć zawsze dokładnie jedną instancję danej klasy;
@@ -66,5 +66,27 @@ Singleton:
             * singleton zapewnia jedną instancję klasy dla jednego class loadera
                 * jeżeli korzystamy z >1 class loadera, wtedy każdy będzie miał swoją instancję, ale najlepiej nie robić >1 class loadera,
                     ale jak trzeba, to trzeba to jakoś rozwiązać :P
+
+
+Builder:
+    * do tworzenia obiektów:
+        * kiedy jest sporo pól w klasie (np. House), to zamiast robić pierdyliar konstruktorów, robimy klasę Builder (np. HouseBuilder),
+            w niej metody na ustawianie wszystkich pól, ale każda zwraca obiekt klasy House, więc budujemy obiekt w łańcuchu metod
+        * dwa sposoby:
+            * klasa wewnętrzna
+                * w klasie House tworzymy public static class HouseBuilder
+                * HouseBuilder ma takie same pola jak House
+                * House ma jeden prywatny konstruktor z parametrem HouseBuilder
+                    i ustawia pola na zasadzie 'this.widnows = houseBuilder.walls'
+                * HouseBuilder ma metodę build(), która zwraca new House(this) i metody ustawiające pola w łańcuchu
+            * klasyczny:
+                * interfejs HouseBuilder oraz jego implementacje SmallHouseBuilder i BigHouseBuilder, gdzie będą implementacje
+                * klasa HouseDirector, w której możemy na sztywno ustawić jakąś logikę budowania obiektów, kiedy nie chcemy, żeby potem
+                    ktoś nie miał za dużo wolności w budowaniu obiektów
+        * na refactoring guru jest trochę inaczej niż w moim przykładzie, bo tu na sztywno wpisane są rzeczy w implementacjach builderów
+            i tam jest podkreślone, że Director może mieć w miarę sztywne metody budowy do reużycia, ale cóż
+
+
+
 
 
