@@ -4,8 +4,8 @@ public class SmallHouseBuilder implements HouseBuilder {
 
     private House house;
 
-    public House SmallHouseBuilder() {
-        return new House();
+    public SmallHouseBuilder() {
+        this.house = new House();
     }
 
     @Override
