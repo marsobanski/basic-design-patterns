@@ -1,4 +1,4 @@
-package co.devfoundry.factory.homework.car.factory;
+package co.devfoundry.factory.homework.factory;
 
 import co.devfoundry.factory.homework.car.Car;
 import co.devfoundry.factory.homework.car.FordModel;

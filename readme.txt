@@ -110,6 +110,8 @@ Factory:
                     * jeżeli dojdą statki:
                         * dorabiamy klasę WaterUnit, którą będą rozszerzały np. Destroyer i Carrier
                         * dodajemy w RedFactory i BlueFactory klasy createWaterUnit i
+                    * dzięki temu w różnych fabrykach możemy ustawić różne parametry tym samym typów,
+                        w zalezności od tego w jakiej fabryce będą tworzone
 
 
 
