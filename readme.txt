@@ -88,9 +88,28 @@ Builder:
 
 
 Factory:
-    * do tworzenia obiektów poprzez delegowanie tworzenia, aby nie popełniać błędów
+    * do tworzenia obiektów poprzez delegowanie tworzenia do klasy Factory, zamiast tworzyć za pomocą konstruktora.
+        Pozwala to na tworzenie kolejnych implementacji Factory do tworzenia kolejnych implementacji obiektu bazowego
     * dwa rodzaje:
         * metoda fabrykująca:
-            * abstrakcyjna
+            * abstrakcyjna klasa Unit i dziedziczące po niej klasy Rifleman i Tank (albo interfejsy zamiast dziedziczenia)
+            * klasa abstrakcyjna Factory oraz dziedzicząca UnitFactory
+                * w Factory jest metoda create(), która tworzy obiekt Unit, wtedy w UnitFactory można
+                    zdefiniować tworzenie różnych implementacji obiektów klasy Unit (Tank, Rifleman)
+        * abstract factory
+            * przydatne kiedy potrzebujemy mieć wiele implementacji obiektu Unit, które różnią się cechami
+                * na przykład tworzymy dwie strony konfliktu i więcej typów (bo to wygląda jak z jakiejś gry wojennej te klasy)
+                    i nagle mamy Unit -> InfantryUnit -> Rifleman i dla każdej strony tworzymy inaczej te jednostki, a więc
+                    InfantryUnitFactory -> BlueInfantryFactory, więc się sporo klas tworzy i ciężko to ogarnąć,
+                    a jakby dorzucić jeszcze statki, to potrzeba jeszcze więcej klas, więc trochę klops
+                * zmiana jest taka, że:
+                    * abstrakcyjną Factory rozszerzana przez BlueFactory i RedFactory
+                    * mamy abstrakcyjne InfantryUnit i MechanizedUnit
+                    * blue Tank i Rifleman są tworzone w BlueFactory, a obydwa red w RedFactory (nie ma klas BlueTank, tylko tak napisałem, jest Tank)
+                    * klasy Tank i Rifleman, które rozszerzają InfantryUnit i MechanizedUnit
+                    * jeżeli dojdą statki:
+                        * dorabiamy klasę WaterUnit, którą będą rozszerzały np. Destroyer i Carrier
+                        * dodajemy w RedFactory i BlueFactory klasy createWaterUnit i
+
 
 

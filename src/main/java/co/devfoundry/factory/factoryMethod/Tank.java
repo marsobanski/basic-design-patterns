@@ -1,4 +1,4 @@
-package co.devfoundry.factory.unit;
+package co.devfoundry.factory.factoryMethod;
 
 public class Tank extends Unit {
 
