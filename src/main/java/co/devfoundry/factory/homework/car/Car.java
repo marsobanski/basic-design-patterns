@@ -1,4 +1,4 @@
-package co.devfoundry.factory.homework.cars;
+package co.devfoundry.factory.homework.car;
 
 import co.devfoundry.factory.homework.FuelType;
 import lombok.AccessLevel;

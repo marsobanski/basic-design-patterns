@@ -1,4 +1,4 @@
-package co.devfoundry.factory.homework.cars;
+package co.devfoundry.factory.homework.car;
 
 public enum SteeringWheelPosition {
     LEFT,
