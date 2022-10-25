@@ -87,6 +87,10 @@ Builder:
             i tam jest podkreślone, że Director może mieć w miarę sztywne metody budowy do reużycia, ale cóż
 
 
-
+Factory:
+    * do tworzenia obiektów poprzez delegowanie tworzenia, aby nie popełniać błędów
+    * dwa rodzaje:
+        * metoda fabrykująca:
+            * abstrakcyjna
 
 
